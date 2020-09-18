@@ -51,5 +51,5 @@ asset = client.get('assets', 'NY00')
 
 asset['title'] = 'New Title'
 
-client.post('assets', asset)
+client.put('assets', asset)
 ```
