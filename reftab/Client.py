@@ -60,8 +60,8 @@ class ReftabClient():
         return self.__request('GET', endpoint)
         
     def put(self, endpoint, id, body):
-        if (!id):
-            throw 'id is required'
+        if (id == None):
+            raise Exception('id is required')
         endpoint += '/' + id
         return self.__request('PUT', endpoint, body)
         
@@ -69,7 +69,7 @@ class ReftabClient():
         return self.__request('POST', endpoint, body)
         
     def delete(self, endpoint, id):
-        if (!id):
-            throw 'id is required'
+        if (id == None):
+            raise Exception('id is required')
         endpoint += '/' + id
         return self.__request('PUT', endpoint, body)
