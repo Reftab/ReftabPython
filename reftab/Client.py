@@ -7,6 +7,7 @@ import json
 import urllib
 import urllib.parse
 import urllib.request
+import email.utils
 from urllib.error import URLError, HTTPError
 
 class ReftabClient():
@@ -19,7 +20,7 @@ class ReftabClient():
         url = 'https://www.reftab.com/api/' + endpoint
         headers = {}
         data = None
-        now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
+        now = email.utils.formatdate(usegmt=True)
         contentMD5 = ''
         contentType = ''
         if body:
