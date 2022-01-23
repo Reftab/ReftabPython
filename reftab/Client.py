@@ -73,4 +73,4 @@ class ReftabClient():
         if (id == None):
             raise Exception('id is required')
         endpoint += '/' + id
-        return self.__request('PUT', endpoint, body)
+        return self.__request('DELETE', endpoint, body)
